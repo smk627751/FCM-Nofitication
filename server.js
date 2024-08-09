@@ -5,7 +5,7 @@ const serviceAccount = require('./serviceAccountKey.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
-
+require('dotenv').config()
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
