@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
+require('dotenv').config()
+const serviceAccount = JSON.parse(process.env.GOOGLE_KEY);
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
-require('dotenv').config()
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
