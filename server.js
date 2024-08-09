@@ -28,7 +28,7 @@ app.post('/send',(req,res) => {
         })
         .catch(error => {
             console.error('Error sending message:', error);
-            res.errored(error)
+            res.send(error)
         });
 })
 app.listen(5000)
